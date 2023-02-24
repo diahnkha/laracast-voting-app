@@ -1,5 +1,13 @@
-<?php
+class ExampleTest extends TestCase
+{
+    /**
+     * a basic test example.
+     * @return void
+     */
 
-test('example', function () {
-    expect(true)->toBeTrue();
-});
+     public function testBasicTest()
+     {
+        $this->assertTrue(true);
+     }
+
+}
