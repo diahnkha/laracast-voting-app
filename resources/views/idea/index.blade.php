@@ -29,7 +29,20 @@
 
     <div class="ideas-container space-y-6 my-6">
         @foreach($ideas as $idea)
-        <div class="idea-container hover:shadow-card bg-white rounded-xl flex transition duration-150 ease-in cursor-pointer">
+        <div 
+            x-data
+            @click="
+                clicked = $event.target
+                target =  clicked.tagName.toLowerCase()
+
+                ignores = ['button', 'svg', 'path', 'a']  
+
+                if (! ignores.includes(target)) {
+                 clicked.closest('.idea-container').querySelector('.idea-link').click()
+                }
+            "
+            class="idea-container hover:shadow-card bg-white 
+            rounded-xl flex transition duration-150 ease-in cursor-pointer">
             <div class="hidden md:block border-r border-gray-100 px-5 py-8">
                 <div class="text-center">
                     <div class="font-semibold text-2xl">12</div>
@@ -52,14 +65,14 @@
                 </div>
                 <div class="w-full mx-4 flex flex-col justify-between ">
                     <h4 class="text-xl font-semibold mt-2 md:mt-0">
-                        <a href="{{ route('idea.show', $idea) }}" class="hover:underline">{{ $idea->title }}</a>
+                        <a href="{{ route('idea.show', $idea) }}" class="idea-link hover:underline">{{ $idea->title }}</a>
                     </h4>
                     <div class="text-gray-600 mt-3 line-clamp-3">
                         {{ $idea->description }}
                     </div>
                     <div class="flex flex-col md:flex-row md:items-center justify-between mt-6">
                         <div class="flex items-center text-xs font-semibold space-x-2 text-gray-400">
-                            <div>$idea->created_at->diffForhumans()</div>
+                            <div>{{ $idea->created_at->diffForhumans() }}</div>
                             <div>&bull;</div>
                             <div>Category 1</div>
                             <div>&bull;</div>
