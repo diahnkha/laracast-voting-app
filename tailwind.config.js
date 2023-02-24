@@ -26,7 +26,8 @@ module.exports = {
                 'gray-background':'#f7f8fc',
             },
             spacing:{
-                44 : '11rem',
+                22: '5.5rem',
+                44: '11rem',
                 70: '17.5rem',
                 175: '43.75rem'
             },
