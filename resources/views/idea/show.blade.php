@@ -13,7 +13,7 @@
             <div class="flex flex-1 px-4 py-6">
                 <div class="flex-none mx-2 md:mx-0">
                     <a href="#">
-                        <img src="https://source.unsplash.com/200x200/?face&v=3" class="w-14 h-14 rounded-xl" alt="avatar">
+                        <img src="{{ $idea->user->getAvatar() }}" alt="avatar" class="w-14 h-14 rounded-xl">
                     </a>
 
                 </div>

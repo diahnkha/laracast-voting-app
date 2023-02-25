@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
 use Cviebrock\EloquentSluggable\Sluggable;
 
 class Idea extends Model
@@ -19,7 +18,7 @@ class Idea extends Model
     // {
     //     return $this->belongsTo(User::class);
     // }
-
+    
     public function sluggable(): array
     {
         return [
@@ -27,5 +26,10 @@ class Idea extends Model
                 'source' => 'title'
             ]
         ];
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
