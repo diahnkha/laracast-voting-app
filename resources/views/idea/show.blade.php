@@ -25,10 +25,12 @@
                         {{ $idea->description }}
                     </div>
                     <div class="flex flex-col md:flex-row items-center justify-between mt-6 mx-2 md:mx-4 ">
-                        <div class="flex items-center text-xs font-semibold space-x-2 text-gray-400">
-                            <div class="font-bold text-gray-900">{{ $idea->user?->name }} </div>
+                        <div class="flex items-center text-xs text-gray-400 font-semibold space-x-2">
+                            <div class="hidden md:block font-bold text-gray-900">{{ $idea->user->name }}</div>
+                            <div class="hidden md:block">&bull;</div>
+                            <div>{{ $idea->created_at->diffForHumans() }}</div>
                             <div>&bull;</div>
-                            <div>{{ $idea->created_at->diffForhumans() }}</div>
+                            <div>{{ $idea->category->name }}</div>
                             <div>&bull;</div>
                             <div class="text-gray-900">3 Comments</div>
                         </div>
