@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreIdeaRequest;
-use App\Http\Requests\UpdateIdeaRequest;
 use App\Models\Idea;
-use App\Models\Category;
+use Illuminate\Http\Request;
 
 class IdeaController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -22,6 +22,8 @@ class IdeaController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -30,14 +32,20 @@ class IdeaController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function store(StoreIdeaRequest $request)
+    public function store(Request $request)
     {
         //
     }
 
     /**
      * Display the specified resource.
+     *
+     * @param  \App\Models\Idea  $idea
+     * @return \Illuminate\Http\Response
      */
     public function show(Idea $idea)
     {
@@ -48,6 +56,9 @@ class IdeaController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Idea  $idea
+     * @return \Illuminate\Http\Response
      */
     public function edit(Idea $idea)
     {
@@ -56,14 +67,21 @@ class IdeaController extends Controller
 
     /**
      * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Idea  $idea
+     * @return \Illuminate\Http\Response
      */
-    public function update(UpdateIdeaRequest $request, Idea $idea)
+    public function update(Request $request, Idea $idea)
     {
         //
     }
 
     /**
      * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Idea  $idea
+     * @return \Illuminate\Http\Response
      */
     public function destroy(Idea $idea)
     {

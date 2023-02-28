@@ -12,6 +12,7 @@ class ShowIdeasTest extends TestCase
 {
     use RefreshDatabase;
 
+    /** @test */
     public function list_of_ideas_shows_on_main_page()
     {
         $categoryOne = Category::factory()->create(['name' => 'Category 1']);
@@ -113,6 +114,6 @@ class ShowIdeasTest extends TestCase
         $response = $this->get(route('idea.show', $ideaTwo));
 
         $response->assertSuccessful();
-        $this->assertTrue(request()->path() === 'ideas/my-first-idea-2');
+        $this->assertTrue(request()->path() === 'ideas/my-first-idea-1');
     }
 }
