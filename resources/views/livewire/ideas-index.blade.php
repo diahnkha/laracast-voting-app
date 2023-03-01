@@ -1,13 +1,11 @@
 <div>
-
-<div class="hidden bg-blue bg-yellow bg-red bg-purple bg-green"></div>
     <div class="filters flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6">
         <div class="w-full md:w-1/3">
-            <select name="category" id="category" class="w-full rounded-xl border-none px-4 py-2">
-                <option value="Category One">Category One</option>
-                <option value="Category Two">Category Two</option>
-                <option value="Category Three">Category Three</option>
-                <option value="Category Four">Category Four</option>
+            <select wire:model="category" name="category" id="category" class="w-full rounded-xl border-none px-4 py-2">
+                <option value="All Categories">All Categories</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->name }}">{{ $category->name }}</option>
+                @endforeach
             </select>
         </div>
         <div class="w-full md:w-1/3">
@@ -31,6 +29,7 @@
     <div class="ideas-container space-y-6 my-8">
         @foreach ($ideas as $idea)
             <livewire:idea-index
+                :key="$idea->id"
                 :idea="$idea"
                 :votesCount="$idea->votes_count"
             />
