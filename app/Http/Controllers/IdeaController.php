@@ -25,6 +25,7 @@ class IdeaController extends Controller
                 ->orderBy('id', 'desc')
                 ->simplePaginate(Idea::PAGINATION_COUNT),
         ]);
+        return view('idea.index');
     }
 
     /**
