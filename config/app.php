@@ -160,9 +160,10 @@ return [
          * Laravel Framework Service Providers...
          */
         Illuminate\Auth\AuthServiceProvider::class,
-        Illuminate\Broadcasting\BroadcastServiceProvider::class,
+        // Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
+        App\Providers\HorizonServiceProvider::class,
         Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
         Illuminate\Cookie\CookieServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
@@ -193,6 +194,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Providers\HorizonServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
     ],
