@@ -46,6 +46,11 @@ class User extends Authenticatable
         return $this->hasMany(Idea::class);
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function votes()
     {
         return $this->belongsToMany(Idea::class, 'votes');
@@ -66,7 +71,6 @@ class User extends Authenticatable
             .$integerToUse
             .'.png';
     }
-
 
     public function isAdmin()
     {
