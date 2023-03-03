@@ -1,5 +1,4 @@
 <div>
-    <div class="bg-blue bg-red bg-yellow bg-green bg-purple"></div>
     <div class="filters flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6">
         <div class="w-full md:w-1/3">
             <select wire:model="category" name="category" id="category" class="w-full rounded-xl border-none px-4 py-2">
@@ -14,6 +13,9 @@
                 <option value="No Filter">No Filter</option>
                 <option value="Top Voted">Top Voted</option>
                 <option value="My Ideas">My Ideas</option>
+                @admin
+                    <option value="Spam Ideas">Spam Ideas</option>
+                @endadmin
             </select>
         </div>
         <div class="w-full md:w-2/3 relative">
