@@ -18,6 +18,7 @@ class IdeaComments extends Component
     {
         return view('livewire.idea-comments', [
             'comments' => $this->idea->comments,
+            
         ]);
     }
 }
